@@ -1,16 +1,15 @@
-import { Ciclista } from "@/types/ciclista";
+// services/Ciclistas.ts
 import axios from "axios";
+import { Ciclista } from "@/types/ciclista";
 
-//GET
-  export async function getCiclistas(): Promise<any> {
-    const response = await axios.get("https://isuci-back.onrender.com/perfil");
-    return response;
-  }
-
-  export async function getCiclista(id: String): Promise<any> {
-    const response = await axios.get(`https://isuci-back.onrender.com/perfil/${id}`);
-    return response;
-  }
+export async function getCiclista(id: string): Promise<Ciclista> {
+    try {
+        const response = await axios.get(`https://isuci-back.onrender.com/perfil/${id}`);
+        return response.data; // Devuelve directamente los datos de la respuesta
+    } catch (error) {
+        throw new Error(`Error al obtener el ciclista con ID ${id}`);
+    }
+}
 
 /*POST
   //export async function addProduct(product: Product): Promise<any> {

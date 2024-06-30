@@ -21,5 +21,10 @@ export const sideBarData = [
     title: <span className="text-white">Crear Producto</span>,
     path: "/products/create",
     icon: <LightBulbIcon className="text-white" />,
+  },
+  {
+    title: <span className="text-white">login</span>,
+    path: "/Login",
+    icon: <LightBulbIcon className="text-white" />,
   }
 ];
