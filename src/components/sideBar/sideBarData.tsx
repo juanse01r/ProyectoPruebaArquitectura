@@ -8,9 +8,19 @@ import {
 export const sideBarData = [
   {
     title: <span className="text-white">Home Ciclista</span>,
-    path: "/",
+    path: "/Ciclista/Home",
     icon: <HomeIcon className="text-white" />,
 
+  },
+  {
+    title: <span className="text-white">Home Masajista</span>,
+    path: "/Masajista/Home",
+    icon: <ArchiveBoxIcon className="text-white" />,
+  },
+  {
+    title: <span className="text-white">Home Admin</span>,
+    path: "/Admin/Home",
+    icon: <ArchiveBoxIcon className="text-white" />,
   },
   {
     title: <span className="text-white">Historial Escuadra</span>,
@@ -26,5 +36,10 @@ export const sideBarData = [
     title: <span className="text-white">login</span>,
     path: "/Login",
     icon: <LightBulbIcon className="text-white" />,
+  },
+  {
+    title: <span className="text-white">pruebaCiclista</span>,
+    path: "/Ciclista/pruebaCiclista",
+    icon: <ArchiveBoxIcon className="text-white" />,
   }
 ];

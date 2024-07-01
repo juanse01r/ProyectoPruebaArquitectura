@@ -2,15 +2,12 @@
 import axios, { AxiosResponse } from "axios";
 
 
+export type LoginResponse = string;
+
 export interface LoginRequest {
   usuario: string;
   password: string;
-  recaptchaToken?: string;
-}
-
-export interface LoginResponse {
-  message?: string;
-  // Define any other response data you expect from the server upon successful login
+  recaptchaToken: string;
 }
 
 export async function login(request: LoginRequest): Promise<LoginResponse> {

@@ -1,14 +1,9 @@
-
-
 "use client";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { MainLayout } from '@/layouts';
 import { Button } from '@/components/Button';
 import { login, LoginRequest } from '@/services/loginService'; // Importa el servicio de login
-
-
-
 
 const Login = () => {
   const [usuario, setUsuario] = useState<string>('');
@@ -20,17 +15,31 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-  
+
     const request: LoginRequest = { usuario, password, recaptchaToken };
-  
+
     try {
-      const response = await login(request);
+      const response: string = await login(request);
       // Manejar la respuesta del servicio de login
       console.log('Respuesta de inicio de sesión:', response);
-    
-      // Redireccionar a la página de perfil si el inicio de sesión fue exitoso
-      //router.push(`/perfil/${usuario}`);
-      console.log('se iniciooo')
+
+      switch (response) {
+        case 'Director':
+          router.push('/pruducts/general');
+          break;
+        case 'Masajista':
+          router.push('/Masajista/Home');
+          break;
+        case 'Ciclista':
+          router.push('/Ciclista/Home');
+          break;
+        case 'Administrador':
+          router.push('/Admin/Home');
+          break;
+        default:
+          setError('Tipo de usuario no reconocido. Por favor, contacta al soporte.');
+          break;
+      }
     } catch (error: any) {
       if (typeof error === 'string') {
         console.error('Error al iniciar sesión:', error);
@@ -41,7 +50,6 @@ const Login = () => {
       }
     }
   };
-  
 
   return (
     <MainLayout>
