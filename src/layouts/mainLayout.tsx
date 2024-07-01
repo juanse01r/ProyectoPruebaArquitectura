@@ -14,7 +14,7 @@ export const MainLayout = ({
 }: MainLayoutProps) => {
 
   return (
-    <main className="relative h-screen overflow-hidden bg-black rounded-2xl">
+    <main className="relative h-screen overflow-hidden bg-gray-100 rounded-2xl">
       <div className="flex items-start justify-between h-full ">
         <SideBar />
         <div className="flex flex-col w-full h-full">
@@ -28,3 +28,4 @@ export const MainLayout = ({
     </main>
   );
 };
+
