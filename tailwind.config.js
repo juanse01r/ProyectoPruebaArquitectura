@@ -63,7 +63,7 @@ module.exports = {
         "neutral-gray-cold": "#595959",
 
         //Yellow
-        yellow: "#FCCD00",
+        "yellow": "#FCCD00",
         "alert-yellow": "#E5BE40",
 
         //Project pallete (GitHub pallete)

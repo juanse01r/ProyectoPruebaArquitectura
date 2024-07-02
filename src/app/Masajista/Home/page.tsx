@@ -55,7 +55,6 @@ export default function MasajistaDetalle() {
     if (error) {
         return <div>Error: {error}</div>;
     }
-
     return (
         <MainLayout>
             {masajista && (
@@ -67,20 +66,26 @@ export default function MasajistaDetalle() {
                             style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
                         />
                     </div>
-                    <div className="flex flex-col items-start justify-center text-white tracking-[1px]">
-                        <h1 className="text-[30px] font-bold">{masajista.nombreusuario} {masajista.apellidousuario}</h1>
-                        <h1>ID: {masajista.iddocumento}</h1>
-                        <h1>Correo: {masajista.correousuario}</h1>
-                        <h1>País: {masajista.idpais}</h1>
-                        <h1>Escuadra: {masajista.idescuadra ?? 'N/A'}</h1>
-                        <h1>Años de Experiencia: {masajista.anosexperiencia ?? 'N/A'}</h1>
-                        {/* Ejemplo de botón para navegar a otra página */}
-                        <Button href={`/Masajista/${iddocumento}/OtraPagina`} className="mt-4">
-                            Ir a otra página
-                        </Button>
+                    <div className="flex flex-col items-start justify-center text-black tracking-[1px] space-y-4">
+                        <h1 className="text-[30px] font-bold text-red-500">{masajista.nombreusuario} {masajista.apellidousuario}</h1>
+                        <div className="border border-red-500 p-2 rounded-lg w-full">
+                            <h1>ID: {masajista.iddocumento}</h1>
+                        </div>
+                        <div className="border border-red-500 p-2 rounded-lg w-full">
+                            <h1>Correo: {masajista.correousuario}</h1>
+                        </div>
+                        <div className="border border-red-500 p-2 rounded-lg w-full">
+                            <h1>País: {masajista.idpais}</h1>
+                        </div>
+                        <div className="border border-red-500 p-2 rounded-lg w-full">
+                            <h1>Escuadra: {masajista.idescuadra ?? 'N/A'}</h1>
+                        </div>
+                        <div className="border border-red-500 p-2 rounded-lg w-full">
+                            <h1>Años de Experiencia: {masajista.anosexperiencia ?? 'N/A'}</h1>
+                        </div>
                     </div>
                 </div>
             )}
         </MainLayout>
     );
-}
+}    
