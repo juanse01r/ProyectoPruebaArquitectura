@@ -25,7 +25,7 @@ const Login = () => {
 
       switch (response) {
         case 'Director':
-          router.push('/pruducts/general');
+          router.push('/Director/Home');
           break;
         case 'Masajista':
           router.push('/Masajista/Home');
